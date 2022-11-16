@@ -60,9 +60,9 @@
 
 #print(message_to_candidate)
 
-voting_data = [1: {"county":"Arapahoe", "registered_voters": 422829}, 
+voting_data = {1: {"county":"Arapahoe", "registered_voters": 422829}, 
                2: {"county":"Denver", "registered_voters": 463353}, 
-               3: {"county":"Jefferson", "registered_voters": 432438}]
+               3: {"county":"Jefferson", "registered_voters": 432438}}
                
 print(f"{voting_data[1]['county']} county has {voting_data[1]['registered_voters']:,} registered voters")
 

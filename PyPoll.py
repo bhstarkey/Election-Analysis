@@ -10,6 +10,7 @@
 ## CN Candidate Name
 ## AV = Accrue votes
 ## PV = Percent votes
+## WC = Winning Candidate info
 
 # Import CSV to work with csv file and OS to interact with the operating system
 # (dependencies)
@@ -31,6 +32,11 @@ candidate_options = []
 
 # AV1. Create empty dictionary to store candidate vote counts
 candidate_votes = {}
+
+#WC1. Winning Candidate and Winning Count Tracker
+winning_candidate = ""
+winning_count = 0
+winning_percentage = 0
 
 
 ## open(file_to_save, "w") as txt_file:

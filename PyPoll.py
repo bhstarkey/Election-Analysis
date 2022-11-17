@@ -81,11 +81,27 @@ for candidate_name in candidate_votes:
     votes = candidate_votes[candidate_name]
 
     #PV3. Calculate the percent votes each candidate received
-    vote_percentage = (votes / total_votes) * 100
+    vote_percentage = float(votes) / float(total_votes) * 100
 
     #PV4. Print what percent of votes each candidate received
-    print(f"{candidate_name} received {vote_percentage:.2f}% of the vote")
+    #bprint(f"{candidate_name} received {vote_percentage:.2f}% of the vote")
 
+    #Print out each candidate's name, vote count, and percentage of votes
+    print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
-# Print the total votes.
-# print(candidate_votes)
+    #WC2. Check if current candidate vote count is greater than winning vote count
+    if ((votes > winning_count) and (vote_percentage > winning_percentage)):
+        #WC3. If true, set the winning count and percentage to the higher value and winning candidate to candidate name
+        winning_count = votes
+        winning_percentage = vote_percentage
+        winning_candidate = candidate_name
+
+# Print winning candidate summary
+winning_candidate_summary = (
+    f"-------------------------\n"
+    f"Winner: {winning_candidate}\n"
+    f"Winnging Vote Count: {winning_count:,}\n"
+    f"Winning Percentage: {winning_percentage:.1f}%\n"
+    f"-------------------------\n"
+)
+print(winning_candidate_summary)
